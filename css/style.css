@@ -538,3 +538,15 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 /* ヘアサイクル正常化の画像 */
 .cycle-normalize-img { display: block; width: 100%; height: auto; border-radius: 10px; margin: 32px 0 0; }
+
+
+/* ★ 1画面目を画像にした形（千代田と同じ） */
+.hero-booking { padding-top: 0; }
+.hero-booking .tap-hint { margin-top: 0; }
+
+.hero-image { position: relative; }
+.hero-image > img { width: 100%; height: auto; }
+.hero-image__title {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+}
