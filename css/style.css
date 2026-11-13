@@ -169,26 +169,15 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* =========================================================================
    1. HERO
    ========================================================================= */
-.hero { background: var(--navy-grad); color: #fff; padding: 40px var(--pad) 34px; text-align: center; }
-.hero__tag { color: var(--gold); font-size: clamp(13px, 3.6vw, 15px); letter-spacing: .06em; margin-bottom: 18px; }
-.hero__title { font-family: var(--serif); margin: 0 0 20px; line-height: 1.5; }
-.hero__title .l1 { font-size: clamp(28px, 8vw, 36px); }
-.hero__title .l1 b { color: var(--gold); font-weight: 700; }
-.hero__title .l2 { display: block; font-size: clamp(26px, 7.4vw, 32px); font-weight: 500; margin-top: 4px; }
-.hero__sub { color: #e6e9f0; font-size: clamp(14px, 3.8vw, 16px); line-height: 1.7; margin-bottom: 24px; }
-.hero__catch { font-size: clamp(15px, 4vw, 18px); }
-.hero__catch .u {
-  display: inline-block;
-  font-size: clamp(24px, 6.6vw, 30px);
-  color: var(--gold);
-  font-weight: 700;
-  border-bottom: 3px solid var(--gold);
-  padding-bottom: 6px;
-  margin: 10px 0 8px;
-  letter-spacing: .02em;
+.hero-booking { padding-top: 0; }
+.hero-booking .tap-hint { margin-top: 0; }
+
+.hero-image { position: relative; }
+.hero-image > img { width: 100%; height: auto; }
+.hero-image__title {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip-path: inset(50%); white-space: nowrap;
 }
-.hero__visual { margin: 26px 0 14px; border-radius: 12px; overflow: hidden; aspect-ratio: 636 / 380; }
-.hero__note { color: #c5cad4; font-size: 11px; }
 
 /* =========================================================================
    2. Trust + price
@@ -272,21 +261,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .follicle-band { border-radius: 12px; overflow: hidden; margin: 26px 0 8px; }
 .follicle-band__img { width: 100%; height: auto; display: block; }
 
-.oi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; }
-.oi-card {
-  background: #fffbf8; border: 1px solid #ece7da; border-radius: 14px;
-  padding: 22px 18px; box-shadow: var(--shadow-sm);
-  display: flex; flex-direction: column; align-items: center; text-align: center;
-}
-.oi-tag { display: inline-block; background: var(--gold); color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .12em; padding: 5px 14px; border-radius: 999px; }
-.oi-ico { display: block; height: 52px; width: auto; max-width: 80%; margin: 16px 0 12px; object-fit: contain; }
-.oi-card b { display: block; color: var(--ink); font-size: clamp(15px, 4vw, 17px); font-weight: 700; line-height: 1.5; }
-.oi-card p { width: 100%; margin-top: 10px; color: var(--body); font-size: 13px; line-height: 1.8; text-align: center; }
-.concept-foot { text-align: center; margin-top: 30px; font-family: var(--serif); font-size: clamp(18px, 5vw, 22px); color: var(--ink); line-height: 1.7; }
-.concept-foot .stamp {
-  display: inline-block; margin-top: 8px; background: var(--gold); color: #fff;
-  font-size: clamp(24px, 6.4vw, 30px); font-weight: 700; padding: 4px 22px; border-radius: 6px;
-}
+.concept-approach { width: 100%; height: auto; margin-top: 18px; }
 
 /* =========================================================================
    RESULTS — before/after cards
@@ -350,7 +325,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .num-card { background: #fffbf8; border-radius: 14px; box-shadow: var(--shadow); overflow: hidden; }
 .num-card__head {
   display: flex; align-items: center; gap: 12px;
-  background: var(--navy); color: #fff; padding: 15px 18px;
+  background: #f5e2c0; color: #000000; padding: 15px 18px;
 }
 .num-card__no {
   flex: none; width: 26px; height: 26px; border-radius: 50%;
@@ -539,14 +514,39 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* ヘアサイクル正常化の画像 */
 .cycle-normalize-img { display: block; width: 100%; height: auto; border-radius: 10px; margin: 32px 0 0; }
 
+/* 条件の案内と次の文章の間を詰める */
+.condition-section { padding-bottom: 12px; }
+.method-intro { padding-top: 0; }
 
-/* ★ 1画面目を画像にした形（千代田と同じ） */
-.hero-booking { padding-top: 0; }
-.hero-booking .tap-hint { margin-top: 0; }
+/* スマホでの読みやすさと各案内の間隔 */
+.concept-lead { font-size: clamp(19px, 5.2vw, 26px); font-weight: 700; line-height: 1.65; color: var(--ink); }
+.concept-lead span { font-size: .72em; color: var(--gold); }
+.concept-section { padding-bottom: 12px; }
+.results-section { padding-top: 12px; }
+.limit-badge { width: 100%; padding: 18px 16px; border: 2px solid var(--gold-soft); text-align: center; background: linear-gradient(135deg, #a63f2e, #c85d42); }
+.limit-badge__label { display: block; font-size: 14px; letter-spacing: .18em; }
+.limit-badge__main { display: block; font-size: 25px; line-height: 1.35; }
+.limit-badge__main strong { color: #fff0bc; font-size: 52px; }
+.method-intro { padding-bottom: 0; }
+.cause-section { padding-top: 12px; }
+.bg-cta-light { background: linear-gradient(135deg, #f5e2c0, #faf0df); color: var(--ink); }
+.bg-cta-light .cta-block__title { color: var(--ink); }
+.bg-cta-light .cta-block__sub, .bg-cta-light .cta-block__foot { color: var(--body); }
+.bg-cta-light .cta-block__big { color: #91651c; }
+@media (max-width: 719px) {
+  .cond-img { width: calc(100% + 2 * var(--pad)); max-width: none; margin-inline: calc(-1 * var(--pad)); border-radius: 0; }
+}
 
-.hero-image { position: relative; }
-.hero-image > img { width: 100%; height: auto; }
-.hero-image__title {
-  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
-  overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+/* 見出しを整理し、人数と理由の数字を強調する */
+.check-section { padding-top: 12px; }
+.section:has(+ .check-section) { padding-bottom: 12px; }
+.reason-heading { display: flex; align-items: baseline; justify-content: center; gap: 7px; color: #91651c; margin: 6px 0 18px; }
+.reason-heading strong { font-family: Georgia, serif; font-size: clamp(80px, 24vw, 110px); font-style: italic; font-weight: 700; line-height: 1; color: #b98222; text-shadow: 1px 2px 0 #f5e2c0; }
+.reason-heading > span { font-size: clamp(26px, 7vw, 34px); }
+.flow-limit { text-align: center; margin-top: 28px; padding: 20px 12px; border: 2px solid var(--gold); }
+.flow-limit__label { display: block; color: #91651c; font-weight: 700; margin-top: 10px; letter-spacing: .16em; }
+.flow-limit__count { display: block; color: #91651c; font-size: 25px; font-weight: 700; line-height: 1.25; margin-bottom: 10px; }
+.flow-limit__count strong { font-size: 56px; }
+@media (max-width: 719px) {
+  .concept-approach, .cycle-normalize-img { width: calc(100% + 2 * var(--pad)); max-width: none; margin-inline: calc(-1 * var(--pad)); border-radius: 0; }
 }
